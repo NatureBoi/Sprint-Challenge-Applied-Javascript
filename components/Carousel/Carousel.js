@@ -9,22 +9,38 @@ class Carousel {
 
         this.images[this.counter].style.display = 'block';
 
-        if(this.images[this.counter] === this.counter){
-            this.images[this.counter].style.display = 'none';
-        }
-
         this.btn_left.addEventListener('click', this.previous.bind(this));
         this.btn_right.addEventListener('click', this.next.bind(this));
     }
     previous(){
         this.counter--;
-        console.log(this.counter);
-        this.images[this.counter].style.display = 'block';
+        if(this.counter <0){
+            this.counter = this.images.length-1;
+        } 
+        // this.images.forEach(image => image.style.display = 'none');
+        // this.images[this.counter].style.display = 'block';
+        // let image = this.images[this.counter]
+        // TweenLite.from(image, 1.5, {opacity:0})
+        // TweenLite.from(image, 1.5, {x:200})
+        this.select();
+
 
     }
     next(){
         this.counter++;
-        console.log(this.counter);
+        if(this.counter === this.images.length){
+            this.counter = 0;
+        } 
+        // this.images.forEach(image => image.style.display = 'none');
+        // this.images[this.counter].style.display = 'block';
+        // let image = this.images[this.counter]
+        // TweenLite.from(image, 2, {opacity:0})
+        // TweenLite.from(image, 1.5, {x:-200})
+        this.select();
+    }
+
+    select(){
+        this.images.forEach(image => image.style.display = 'none')
         this.images[this.counter].style.display = 'block';
     }
 }
