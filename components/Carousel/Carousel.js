@@ -17,31 +17,23 @@ class Carousel {
         if(this.counter <0){
             this.counter = this.images.length-1;
         } 
-        // this.images.forEach(image => image.style.display = 'none');
-        // this.images[this.counter].style.display = 'block';
-        // let image = this.images[this.counter]
-        // TweenLite.from(image, 1.5, {opacity:0})
-        // TweenLite.from(image, 1.5, {x:200})
-        this.select();
-
-
+        TweenLite.from(this.select(), 1.5, {opacity:0})
+        TweenLite.from(this.select(), 1.5, {x:200})
     }
     next(){
         this.counter++;
         if(this.counter === this.images.length){
             this.counter = 0;
         } 
-        // this.images.forEach(image => image.style.display = 'none');
-        // this.images[this.counter].style.display = 'block';
-        // let image = this.images[this.counter]
-        // TweenLite.from(image, 2, {opacity:0})
-        // TweenLite.from(image, 1.5, {x:-200})
-        this.select();
+        TweenLite.from(this.select(), 2, {opacity:0})
+        TweenLite.from(this.select(), 1.5, {x:-200})
     }
 
     select(){
         this.images.forEach(image => image.style.display = 'none')
         this.images[this.counter].style.display = 'block';
+        let image = this.images[this.counter]
+        return image
     }
 }
 
