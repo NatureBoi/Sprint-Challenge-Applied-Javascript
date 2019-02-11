@@ -317,6 +317,14 @@ form .article-title {
   display: flex;
   flex-direction: column;
 }
+form .article-author {
+  display: flex;
+  flex-direction: column;
+}
+form .article-tag {
+  display: flex;
+  flex-direction: column;
+}
 .new-article h2{
   text-align: center;
 }

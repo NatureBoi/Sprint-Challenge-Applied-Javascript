@@ -62,9 +62,19 @@
                   <label for="Title">Article Title</label>
                   <input type="text" id="title">
                 </div>
-                <div class="article-message">
-                  <label for="msg">Article Message</label>
-                  <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+                <div class="article-tag">
+                  <label for="Tag">Article Tag</label>
+                  <select name="tag" id="tag-select">
+                    <option value="javascript">JavaScript</option>
+                    <option value="technology">Technology</option>
+                    <option value="node">Node</option>
+                    <option value="jquery">jQuery</option>
+                    <option value="bootstrap">Bootstrap</option>
+                  </select>
+                </div>
+                <div class="article-author">
+                  <label for="author">Article Author</label>
+                  <input type="text" id="author-input">
               </div>
               <div class="button">
                 <p class="btn btn-submit" id="submit">Submit</p>

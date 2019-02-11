@@ -23,3 +23,5 @@ class Modal{
 
 let modal = document.querySelector('.modal');
 modal = new Modal(modal)
+
+

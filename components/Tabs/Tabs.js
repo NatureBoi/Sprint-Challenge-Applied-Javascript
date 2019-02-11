@@ -26,8 +26,8 @@ class TabLink {
     this.tabElement.addEventListener('click', this.selectTab.bind(this));
   }
 
-  selectTab(){
-
+  selectTab(e){
+    e.preventDefault();
     // Select all elements with the .tab class on them
     const tabs = document.querySelectorAll('.tab');
     
@@ -71,3 +71,57 @@ class TabCard {
 */
 let tabs = document.querySelectorAll('.tab');
 tabs.forEach(tab => tab = new TabLink(tab));
+
+function createTopic(title, tag, author){
+
+  let new_card = document.createElement('div')
+  new_card.setAttribute('class','card');
+  new_card.setAttribute("data-tab",`${tag}`)
+
+  let headline = document.createElement('div')
+  headline.setAttribute('class', 'headline')
+  headline.textContent = title;
+
+  let divAuthor = document.createElement('div')
+  divAuthor.setAttribute('class', 'author')
+
+  let imgAuthor = document.createElement('div')
+  imgAuthor.setAttribute('class',"img-container")
+  
+  let image = document.createElement('img')
+  image.setAttribute('src', './assets/fido.jpg')
+
+  let spanAuthor = document.createElement('span')
+  spanAuthor.textContent = author;
+
+  new_card.appendChild(headline)
+  new_card.appendChild(divAuthor)
+  divAuthor.appendChild(imgAuthor);
+  imgAuthor.appendChild(image)
+  divAuthor.appendChild(spanAuthor)
+
+  return new_card
+}
+
+function addTopic(topic) {
+  let parent_topic = document.querySelector(".cards-container");
+  parent_topic.prepend(topic);
+}
+
+let submit_btn = document.getElementById("submit");
+
+submit_btn.addEventListener("click", e => {
+  e.preventDefault();
+
+  let title = document.getElementById("title").value;
+  let ete = document.getElementById('tag-select')
+  let tag = ete.options[ete.selectedIndex].value
+  let author = document.getElementById("author-input").value;
+
+  let n_art = createTopic(title, tag, author);
+  addTopic(n_art);
+  n_art = new TabLink(n_art);
+
+  document.getElementById("title").value = "";
+  document.getElementById("author-input").value = "";
+});
