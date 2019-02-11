@@ -303,3 +303,100 @@ body {
   width: 100%;
   display: none;
 }
+form {
+  background: rgb(186, 218, 128);
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 1.6rem;
+  border-radius: 12px;
+  /* box-shadow: #333 2px 5px 12px; */
+}
+form .article-title {
+  display: flex;
+  flex-direction: column;
+}
+.new-article h2{
+  text-align: center;
+}
+form .article-title input {
+  height: 25px;
+}
+form .article-message {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0 0 0;
+}
+form .button {
+  display: flex;
+  justify-content: center;
+}
+form .button .btn {
+  background: dodgerblue;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+}
+form .button .btn:hover {
+  background: #51a9ff;
+}
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /*Full width*/
+  height: 100%; /*Full height*/
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: rgb(186, 218, 128);
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  border-radius: 12px;
+  width: 25%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+
+/* The Close Button */
+.close {
+  color: red;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  position: fixed;
+  right: 751px;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}

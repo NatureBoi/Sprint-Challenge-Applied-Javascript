@@ -9,6 +9,7 @@
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
   <script src="./components/Carousel/Carousel.js" async></script>
+  <script src="./components/Modal/modal.js" async></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" async></script>
 
 </head>
@@ -49,7 +50,31 @@
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
     </div>
   </div>
+  <button class="modal-btn">Modal</button>
+  <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          <div class="new-article">
+              <h2>Post a new Form Topic!</h2>
+              <form action="">
+                <div class="article-title">
+                  <label for="Title">Article Title</label>
+                  <input type="text" id="title">
+                </div>
+                <div class="article-message">
+                  <label for="msg">Article Message</label>
+                  <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+              </div>
+              <div class="button">
+                <p class="btn btn-submit" id="submit">Submit</p>
+              </div>
+              </form>
+            </div>
 
+      </div>
+
+    </div>
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
 <div class="carousel">
