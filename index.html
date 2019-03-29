@@ -8,7 +8,10 @@
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="./components/Tabs/Tabs.js" async></script>
-  <!-- <script src="./components/Carousel/Carousel.js" async></script> -->
+  <script src="./components/Carousel/Carousel.js" async></script>
+  <script src="./components/Modal/modal.js" async></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/2.0.2/TweenMax.min.js" async></script>
+
 </head>
 
 <body>
@@ -47,17 +50,51 @@
       <div data-tab="bootstrap" class="tab">BOOTSTRAP</div>
     </div>
   </div>
+  <button class="modal-btn">Modal</button>
+  <!-- Modal -->
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+          <div class="new-article">
+              <h2>Post a new Form Topic!</h2>
+              <form action="">
+                <div class="article-title">
+                  <label for="Title">Article Title</label>
+                  <input type="text" id="title">
+                </div>
+                <div class="article-tag">
+                  <label for="Tag">Article Tag</label>
+                  <select name="tag" id="tag-select">
+                    <option value="javascript">JavaScript</option>
+                    <option value="technology">Technology</option>
+                    <option value="node">Node</option>
+                    <option value="jquery">jQuery</option>
+                    <option value="bootstrap">Bootstrap</option>
+                  </select>
+                </div>
+                <div class="article-author">
+                  <label for="author">Article Author</label>
+                  <input type="text" id="author-input">
+              </div>
+              <div class="button">
+                <p class="btn btn-submit" id="submit">Submit</p>
+              </div>
+              </form>
+            </div>
 
+      </div>
+
+    </div>
   <!-- STRETCH GOAL: ONLY UNCOMMENT THIS WHEN YOU ARE FINISHED WITH THE MAIN OBJECTIVE -->
   <!-- CAROUSEL COMPONENT -->
-  <!-- <div class="carousel">
+<div class="carousel">
     <div class="left-button"><</div>
     <img src="./assets/carousel/mountains.jpeg" />
     <img src="./assets/carousel/computer.jpeg" />
     <img src="./assets/carousel/trees.jpeg" />
     <img src="./assets/carousel/turntable.jpeg" />
     <div class="right-button">></div>
-  </div> -->
+  </div>
 
   <!-- CARDS COMPONENT -->
   <div class="cards-container">
@@ -83,6 +120,16 @@
       </div>
     </div>
 
+    <div class="card" data-tab="javascript">
+      <div class="headline">The Essential JavaScript</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/bones.jpg" />
+        </div>
+        <span>By Marcus Aurelius</span>
+      </div>
+    </div>
+
     <div class="card" data-tab="bootstrap">
       <div class="headline">Bootstrap 5: Get a Sneak Peak at all the New Features</div>
       <div class="author">
@@ -90,6 +137,16 @@
           <img src="./assets/fido.jpg" />
         </div>
         <span>By FIDO WALKSALOT</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="bootstrap">
+      <div class="headline">Bootstrap 5: The New HTML Standard. Learn More Here</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/fido.jpg" />
+        </div>
+        <span>By Mace Windu</span>
       </div>
     </div>
 
@@ -103,6 +160,16 @@
       </div>
     </div>
 
+    <div class="card" data-tab="technology">
+      <div class="headline">Is Technology Killing us? Here is what people believe</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/max.jpg" />
+        </div>
+        <span>By Unknown Soldier</span>
+      </div>
+    </div>
+
     <div class="card" data-tab="jquery">
       <div class="headline">History of Javascript Libraries: from jQuery to React</div>
       <div class="author">
@@ -110,6 +177,16 @@
           <img src="./assets/puppers.jpg" />
         </div>
         <span>By PUPPER S. DOGGO</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="jquery">
+      <div class="headline">Jquery is Dead. GreenSock is the future</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/puppers.jpg" />
+        </div>
+        <span>By Ken Bone</span>
       </div>
     </div>
 
@@ -130,6 +207,16 @@
           <img src="./assets/sir.jpg" />
         </div>
         <span>By SIR RUFF'N'STUFF</span>
+      </div>
+    </div>
+
+    <div class="card" data-tab="node">
+      <div class="headline">Essential Node.js Learn all here</div>
+      <div class="author">
+        <div class="img-container">
+          <img src="./assets/sir.jpg" />
+        </div>
+        <span>By Rick Flair</span>
       </div>
     </div>
 
